@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import {normalizedComments} from './fictures';
+import CommentsList from './CommentsList';
 
 export default class Article extends Component {
     constructor(props){
         super(props);
 
         this.state = {
-            isOpen: false
+            isOpen: true
         };
 
     }
@@ -23,9 +25,15 @@ export default class Article extends Component {
     }
 
     getBody() {
-        if(!this.state.isOpen) return null
-        const {article} = this.props;
-        return <section>{article.text}</section>
+        if(!this.state.isOpen){
+          return null;
+        } else {
+          const {article} = this.props;
+          return <section>
+            {article.text}
+            <CommentsList comments={normalizedComments}/>
+          </section>
+       }
     }
 
     toggleOpen = () => {
@@ -33,6 +41,5 @@ export default class Article extends Component {
             isOpen: !this.state.isOpen
         })
     }
+
 }
-
-
