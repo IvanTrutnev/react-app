@@ -1,24 +1,12 @@
 import React, {Component} from 'react';
 import Comment from './Comment';
 
-// export default function CommentsList({comments}) {
-//   const commentElements = comments.map((comment) => <li key={comment.id}><Comment comment={comment}/></li>);
-//   return (
-//     <div>
-//       <button>showComments</button>
-//       <ul>
-//         {commentElements}
-//         </ul>
-//     </div>
-//   )
-// }
-
 export default class CommentsList extends Component {
   constructor(props){
       super(props);
 
       this.state = {
-          isOpen: true
+        isOpen: true
       };
 
   }
@@ -37,24 +25,19 @@ export default class CommentsList extends Component {
   getBody() {
     if(this.state.isOpen){
       const {comments} = this.props;
-      if(!comments.length) {
+      if(!comments || !comments.length) {
         return (
-          <span>
-          No comments
-          </span>
+          <div>
+            No comments
+          </div>
         )
-      } else {
-        const commentElements = comments.map((comment) => <li key={comment.id}><Comment comment={comment}/></li>);
-        return (
-          <ul>
-            {commentElements}
-          </ul>
-          )
       }
-    } else {
-      return null;
+      return (
+        <ul>
+          {comments.map((comment) => <li key={comment.id}><Comment comment={comment}/></li>)}
+        </ul>
+        )
     }
-
   }
 
   toggleComments = () => {

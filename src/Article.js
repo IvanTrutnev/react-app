@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {normalizedComments} from './fictures';
 import CommentsList from './CommentsList';
 
 export default class Article extends Component {
@@ -7,7 +6,7 @@ export default class Article extends Component {
         super(props);
 
         this.state = {
-            isOpen: true
+          isOpen: true
         };
 
     }
@@ -16,11 +15,11 @@ export default class Article extends Component {
         const {isOpen} = this.state;
 
         return (
-            <div>
-                <h3>{article.title}</h3>
-                <button onClick={this.toggleOpen}>{isOpen ? 'close': 'open'}</button>
-                {this.getBody()}
-            </div>
+          <div>
+            <h2>{article.title}</h2>
+            <button onClick={this.toggleOpen}>{isOpen ? 'close': 'open'}</button>
+            {this.getBody()}
+          </div>
         )
     }
 
@@ -31,7 +30,7 @@ export default class Article extends Component {
           const {article} = this.props;
           return <section>
             {article.text}
-            <CommentsList comments={normalizedComments}/>
+            <CommentsList comments={article.comments}/>
           </section>
        }
     }
