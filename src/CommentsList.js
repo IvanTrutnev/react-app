@@ -2,13 +2,22 @@ import React, {Component} from 'react';
 import Comment from './Comment';
 
 export default class CommentsList extends Component {
-  constructor(props){
-      super(props);
+  static defaultProps = {
+    comments: []
+  }
+  // ES6 Syntax
+  // constructor(props){
+  //     super(props);
+  //
+  //     this.state = {
+  //       isOpen: true
+  //     };
+  //
+  // }
 
-      this.state = {
-        isOpen: true
-      };
-
+  //ES7 Syntax
+  state = {
+    isOpen: true
   }
 
   render() {
@@ -25,7 +34,7 @@ export default class CommentsList extends Component {
   getBody() {
     if(this.state.isOpen){
       const {comments} = this.props;
-      if(!comments || !comments.length) {
+      if(!comments.length) {
         return (
           <div>
             No comments
