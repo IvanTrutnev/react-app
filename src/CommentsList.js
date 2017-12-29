@@ -5,6 +5,7 @@ export default class CommentsList extends Component {
   static defaultProps = {
     comments: []
   }
+  
   // ES6 Syntax
   // constructor(props){
   //     super(props);
