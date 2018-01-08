@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import Articlelist from './ArticleList'
+import Articlelist from './components/ArticleList'
 import {articles} from './fictures'
 import registerServiceWorker from './registerServiceWorker';
 
