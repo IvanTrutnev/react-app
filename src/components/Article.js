@@ -14,11 +14,11 @@ class Article extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-      console.log('update', this.props.isOpen, nextProps.isOpen);
+      //console.log('update', this.props.isOpen, nextProps.isOpen);
     }
 
     componentWillMount() {
-      console.log('will mount');
+      //console.log('will mount');
     }
 
     render() {
@@ -35,11 +35,11 @@ class Article extends Component {
 
     setContainerRef = ref => {
       this.container = ref;
-      console.log(ref);
+      //console.log(ref);
     }
 
     componentDidMount() {
-      console.log('did mount');
+      //console.log('did mount');
     }
 
     getBody() {
@@ -55,7 +55,7 @@ class Article extends Component {
     }
 
     setCommentsRef = ref => {
-      console.log(findDOMNode(ref));
+      //console.log(findDOMNode(ref));
     }
 
 
